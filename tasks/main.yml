@@ -2,6 +2,9 @@
 # Variable configuration.
 - include: variables.yml
 
+- include: manual_install_debian.yml
+  when: ansible_os_family == 'Debian'
+
 # Setup/install tasks.
 - include: setup-RedHat.yml
   when: ansible_os_family == 'RedHat'
